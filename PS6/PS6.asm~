@@ -1,0 +1,12 @@
+MOV A, #0FFH
+MOV R0, #0	; Zeros
+MOV R1, #0	; Ones
+MOV R2, #8 	; Counter
+LOOP:
+RRC A
+JC ONE
+INC R0
+JMP NEXT
+ONE: INC R1
+NEXT: DJNZ R2, LOOP
+END
